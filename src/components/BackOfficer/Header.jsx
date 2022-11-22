@@ -27,6 +27,9 @@ const Header = () => {
       case "assign-tasks":
         el = ulEl.current.querySelector("#assign-tasks span");
         break;
+      case "overview-mcp":
+        el = ulEl.current.querySelector("#overview-mcp span");
+        break;
       default:
         break;
     }
@@ -121,6 +124,16 @@ const Header = () => {
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <span className="text">Assign Route</span>
+                </NavLink>
+              </div>
+            </li>
+            <li>
+              <div className="dropdown" id="overview-mcp">
+                <NavLink
+                  to="/home/overview-mcp"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <span className="text">Overview MCP</span>
                 </NavLink>
               </div>
             </li>
