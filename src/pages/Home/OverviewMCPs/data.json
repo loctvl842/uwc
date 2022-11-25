@@ -3,6 +3,7 @@
         "Id": "1234",
         "Name": "Ho rac Manifer",
         "Address": "Linh Trung, Thu Duc, HCM",
+        "Status": "80%",
         "Des": "Put into operation in 1996. Ho rac Manifer has a capacity of up to 100,000 tons.",
         "Image": "https://cleanmanagement.com/wp-content/uploads/2019/09/Landfilling.jpg"
     },
@@ -10,6 +11,7 @@
         "Id": "6478",
         "Name": "Khu tap trung Drag",
         "Address": "Thong Nhat, Quan 5, HCM",
+        "Status": "50%",
         "Des": "Put into operation in 1985. Khu tap trung Drag has a capacity of up to 120,000 tons.",
         "Image": "https://www.clf.org/wp-content/uploads/2017/05/Detail-SouthbridgeLandfill-Aerial.jpg"
     },
@@ -17,6 +19,7 @@
         "Id": "4367",
         "Name": "Tram tap trung GHJ",
         "Address": "Tan Hoi, Quan 9, HCM",
+        "Status": "60%",
         "Des": "Put into operation in 2005. Tram tap trung GHJ has a capacity of up to 150,000 tons. This is one of the largest MCPs",
         "Image": "https://cdn.hswstatic.com/gif/landfill-update.jpg"
     },
@@ -24,6 +27,7 @@
         "Id": " 9748",
         "Name": "Ho rac Body",
         "Address": "Linh Chieu, Quan 10, HCM",
+        "Status": "Full",
         "Des": "Ho rac Body is oldest since 1980. It has a capacity of up to 90,000 tons.",
         "Image": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/11/landfill_site/23774489-1-eng-GB/Landfill_site_pillars.jpg"
     },
@@ -31,6 +35,7 @@
         "Id": "2056",
         "Name": "Khu thai TDCT",
         "Address": "Tan Hiep, Phu Nhuan, HCM",
+        "Status": "70%",
         "Des": "Put into operation in 2000. Khu thai TDCT has a capacity of up to 110,000 tons.",
         "Image": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Fd1i4t8bqe7zgj6.cloudfront.net%2F11-20-2017%2Ft_1511198552504_name_Globalwaste_thumbnailvid_thumbnail.jpg&w=576"
     },
@@ -38,6 +43,7 @@
         "Id": "7214",
         "Name": "Khu tai che YUIAS",
         "Address": "Dong Da, Tan Binh, HCM",
+        "Status": "80%",
         "Des": "Put into operation in 2002. Khu tai che YUIAS has a capacity of up to 100,000 tons.",
         "Image": "https://d3lut3gzcpx87s.cloudfront.net/image_encoded/aHR0cHM6Ly9zaWxrc3RhcnQuczMuYW1hem9uYXdzLmNvbS85YjgyZGYzNS05OTNjLWM0NTctODQ3Ni1iODliZGEwM2E3NmUuanBn/1600x800"
     },
@@ -45,6 +51,7 @@
         "Id": "3754",
         "Name": "Khu tạp trung NHL",
         "Address": "Linh Chieu, Go Vap HCM",
+        "Status": "Full",
         "Des": "Put into operation in 2003. Khu tạp trung NHL has a capacity of up to 105,000 tons.",
         "Image": "https://cdn-web-content.srk.com/upload/baseentities/364/Landfills%20and%20Solid%20Waste20190911183650940.jpeg"
     }

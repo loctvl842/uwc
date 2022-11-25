@@ -61,8 +61,8 @@ const OverviewMCPs = () => {
             }
             <div class="w-full h-[285px] bg-green-800 flex align-middle">
                 <div class="flex  w-75/100 justify-between m-auto">
-                    <div class="w-35/100 flex flex-none justify-between " >
-                        <div class="flex-none flex text-center align-middle  w-15/100  boder rounded-full bg-emerald-900 hover:bg-yellow-400 hover:text-white transition delay-150 " >
+                    <div class="w-35/100 flex flex-none justify-between" >
+                        <div class="flex-none flex text-center align-middle  w-[75px] h-[75px]  boder rounded-full bg-emerald-900 hover:bg-yellow-400 hover:text-white transition delay-150 " >
                             <div class="m-auto"><BsTelephone /> </div>
                         </div>
                         <div class="flex-none place-content-around  w-67/100">
