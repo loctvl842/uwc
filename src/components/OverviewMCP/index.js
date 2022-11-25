@@ -8,11 +8,13 @@ const Index = ({ item }) => {
                 <div class="flex-none w-10/19 flex align-middle">
                     <div class=" w-4/5 m-auto text-justify font-sans">
                         <p class="font-semibold">ID: {item.Id}</p>
-                        <div class="h-4"></div>
+                        <div class="h-2"></div>
                         <p class="font-semibold">Name: {item.Name}</p>
-                        <div class="h-4"></div>
+                        <div class="h-2"></div>
                         <p class="font-semibold">Address: {item.Address}</p>
-                        <div class="h-4"></div>
+                        <div class="h-2"></div>
+                        <p class="font-semibold">Capacity status: {item.Status}</p>
+                        <div class="h-2"></div>
                         <p class="font-medium text-gray-400">{item.Des}</p>
                     </div>
                 </div>
