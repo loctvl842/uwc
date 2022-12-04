@@ -13,3 +13,6 @@ export { default as BodyBar } from "@components/Chat/ChatForm/BodyBar/BodyBar";
 export { default as Home } from "@components/Home/Home";
 export { default as Member } from "@components/Staffs/Member";
 export { default as Progress } from "@components/Staffs/Progress";
+export { default as ChatButton} from "@components/ChatBox/ChatButton"
+export { default as ListChat} from "@components/ChatBox/ListChat"
+export { default as MessageBox} from "@components/ChatBox/MessageBox"

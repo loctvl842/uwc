@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "customize-cra": "^1.0.0",
     "dayjs": "^1.11.5",
+    "popup-chat-react": "^1.0.5",
     "react": "^18.2.0",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
