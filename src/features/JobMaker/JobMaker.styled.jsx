@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.form`
   z-index: 100;
   width: 100%;
   top: 0;
@@ -28,7 +28,7 @@ export const MoveDown = styled.div`
 
 export const FormContainer = styled.div`
   width: 450px;
-  height: 500px;
+  height: 536px;
   background-color: #fff;
   box-shadow: 0px 24px 38px 3px rgb(0 0 0 / 14%),
     0px 9px 46px 8px rgb(0 0 0 / 12%), 0px 11px 15px -7px rgb(0 0 0 / 20%);
@@ -75,5 +75,38 @@ export const CloseBtn = styled.button`
   background-color: transparent;
   &:hover {
     background-color: #e8e9ea;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  height: 50px;
+  border-top: 2px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+export const CustomButton = styled.button`
+  background: #ccc;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  position: relative;
+  &:hover {
+    background: #006940;
+    color: #fff;
+  }
+  &::before {
+    position: absolute;
+    inset: 0;
+    background: red;
+    width: 100%;
+    height: 100px;
   }
 `;

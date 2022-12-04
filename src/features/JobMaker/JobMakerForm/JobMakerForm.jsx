@@ -1,61 +1,172 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { MdCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { BsTrash } from "react-icons/bs";
-import { MdNotes, MdOutlineDateRange } from "react-icons/md";
-import { TbChartAreaLine } from "react-icons/tb";
+import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import {
-  AssignContent,
   Container,
-  Icon,
-  Name,
-  Title,
-  TitleBody,
+  InputField,
+  InputWrapper,
+  LabelType,
+  InputText,
+  ActiveBar,
+  InActiveBar,
+  InputNumber,
+  OptionType,
+  OptionName,
+  InputNumberWrapper,
+  InactiveBorder,
+  ListField,
+  ListItem,
+  ListStyleType,
+  ActionButton,
+  ButtonContainer,
+  ListContainer,
+  UnorderList,
 } from "./JobMakerForm.styled";
 
 const JobMakerForm = () => {
+  const [isFocus, setIsFocus] = useState(false);
+  const [isMCPsOpen, setIsMCPsOpen] = useState(false);
+  const mcpRef = useRef(null);
+  const [vehicle, setVehicle] = useState({
+    troller: 0,
+    truck: 0,
+    van: 0,
+  });
+
+  const handleVehicleChange = (e) => {
+    setVehicle({ ...vehicle, [e.target.name]: e.target.value });
+  };
+
+  useEffect(() => {
+    if (mcpRef.current) {
+      setIsMCPsOpen(true);
+    }
+  }, [mcpRef.current]);
+
   return (
     <Container>
-      <Title>
-        <TitleBody className="title-left">
-          <i className="title-left-icons"></i>
-        </TitleBody>
-        <TitleBody className="title-right">
-          <div className="title-right-content">
-            <span>Task information</span>
-          </div>
-        </TitleBody>
-      </Title>
-      <AssignContent>
-        <Icon>
-          <i>
-            <MdOutlineDateRange />
-          </i>
-        </Icon>
-        <div>
-          <span>Thursday, September 1</span>
-        </div>
-      </AssignContent>
-      <AssignContent>
-        <Icon>
-          <i>
-            <TbChartAreaLine />
-          </i>
-        </Icon>
-        <div>
-          <span>Area 1</span>
-        </div>
-      </AssignContent>
-      <AssignContent>
-        <Icon>
-          <i>
-            <BsTrash />
-          </i>
-        </Icon>
-        <div>
-          <span>Collection Point 1</span>
-        </div>
-      </AssignContent>
-      <AssignContent></AssignContent>
-      {/* <Name>Loc Kiet Kiet</Name> */}
+      <InputField>
+        <LabelType width={100}>Name: </LabelType>
+        <InputWrapper>
+          <InputText
+            onFocus={() => setIsFocus(true)}
+            onBlur={() => setIsFocus(false)}
+          ></InputText>
+          <InActiveBar></InActiveBar>
+          <ActiveBar isFocus={isFocus}></ActiveBar>
+        </InputWrapper>
+      </InputField>
+      <InputField>
+        <LabelType width={100}>Vehicles: </LabelType>
+        <InputWrapper>
+          <OptionType>
+            <OptionName>Troller </OptionName>
+            <InputNumberWrapper>
+              <InputNumber
+                type="number"
+                min="0"
+                max="5"
+                name="troller"
+                value={vehicle.troller}
+                onChange={handleVehicleChange}
+              />
+              <InactiveBorder></InactiveBorder>
+            </InputNumberWrapper>
+          </OptionType>
+          <OptionType>
+            <OptionName>Truck</OptionName>
+            <InputNumberWrapper>
+              <InputNumber
+                type="number"
+                min="0"
+                max="5"
+                name="truck"
+                value={vehicle.truck}
+                onChange={handleVehicleChange}
+              />
+              <InactiveBorder></InactiveBorder>
+            </InputNumberWrapper>
+          </OptionType>
+          <OptionType>
+            <OptionName>Van</OptionName>
+            <InputNumberWrapper>
+              <InputNumber
+                type="number"
+                min="0"
+                max="5"
+                name="van"
+                value={vehicle.van}
+                onChange={handleVehicleChange}
+              />
+              <InactiveBorder></InactiveBorder>
+            </InputNumberWrapper>
+          </OptionType>
+        </InputWrapper>
+      </InputField>
+      <ListField>
+        <LabelType width={100}>MCPs: </LabelType>
+        <ListContainer>
+          <ButtonContainer>
+            <ActionButton>+</ActionButton>
+            <ActionButton>
+              <BsTrash />
+            </ActionButton>
+            <ActionButton>
+              <MdCheckBox />
+            </ActionButton>
+            <ActionButton>
+              <GoChevronDown />
+            </ActionButton>
+          </ButtonContainer>
+          <UnorderList ref={mcpRef} isMCPsOpen={isMCPsOpen}>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+          </UnorderList>
+        </ListContainer>
+      </ListField>
+
+      <ListField>
+        <LabelType width={100}>Members: </LabelType>
+        <ListContainer>
+          <ButtonContainer>
+            <ActionButton>+</ActionButton>
+            <ActionButton>
+              <BsTrash />
+            </ActionButton>
+            <ActionButton>
+              <MdCheckBox />
+            </ActionButton>
+            <ActionButton>
+              <GoChevronDown />
+            </ActionButton>
+          </ButtonContainer>
+          <ul>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+            <ListItem>
+              <ListStyleType></ListStyleType> loc
+            </ListItem>
+          </ul>
+        </ListContainer>
+      </ListField>
     </Container>
   );
 };

@@ -7,6 +7,8 @@ import {
   FormContainer,
   Header,
   CloseBtn,
+  ButtonWrapper,
+  CustomButton,
 } from "./JobMaker.styled";
 import useClickOutside from "@hook/useClickOutside";
 import { useEffect, useRef, useState } from "react";
@@ -29,7 +31,9 @@ const JobMaker = () => {
   };
 
   useClickOutside(cardRef, (e) => {
-    dispatch(isMakingTurnOff());
+    if (isJobMakerMount) {
+      dispatch(isMakingTurnOff());
+    }
   });
 
   useEffect(() => {
@@ -52,6 +56,9 @@ const JobMaker = () => {
               </CloseBtn>
             </Header>
             <JobMakerForm></JobMakerForm>
+            <ButtonWrapper>
+              <CustomButton type="submit">Save</CustomButton>
+            </ButtonWrapper>
           </FormContainer>
         </MoveLeft>
       </Container>

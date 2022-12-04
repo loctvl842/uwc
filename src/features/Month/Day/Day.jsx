@@ -17,14 +17,8 @@ const Day = ({ day, rowIdx }) => {
   const jobColRef = useRef();
   const dispatch = useDispatch();
   const { isMaking } = useSelector((state) => state.jobMaker);
-  /* console.log(day); */
   const handleJobClick = (e) => {
     if (!isMaking) {
-      /* mount JobMaker */
-      /* console.log(e.target.offsetLeft); */
-      /* console.log(e.target.offsetTop); */
-      /* console.log(e.target.offsetWidth); */
-      /* console.log(e.target.offsetHeight); */
       const colPos = {
         left: e.target.offsetLeft,
         top: e.target.offsetTop,
@@ -32,7 +26,6 @@ const Day = ({ day, rowIdx }) => {
       let isTranslateToRight = false;
       const calcPosX = () => {
         const colWidth = jobColRef.current?.clientWidth;
-        console.log(colWidth);
         if (colPos.left - CARD_WIDTH < 0) {
           isTranslateToRight = true;
           return colWidth + colPos.left;
