@@ -23,7 +23,7 @@ const BackOfficer = () => {
 
       </ChatButton>
       <ListChat trigger={chatPopup} onClose={() => setChatPopup(false)} userTrigger={() => {
-        if (chatUserPopup == false) {
+        if (chatUserPopup === false) {
           setChatPopup(false);
           setUserPopup(true);
         } 

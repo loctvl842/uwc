@@ -8,7 +8,6 @@ export const Container = styled.div`
         justify-content: space-between;
         width: 281.72px;
         height: 385.79px;
-        // right: 320px;
         right: 24px;
         bottom: 94px;
         z-index: 1002;
@@ -107,8 +106,8 @@ export const Avatar = styled.div`
 export const ClerkName = styled.div`
   display: flex;
   position: relative;
-  padding-right: 10%;
-  font-family: 'Inter';
+  padding-left: 0%;
+  font-family: 'Open Sans';
   font-weight: 900;
   font-size: 18px;
   line-height: 14px;

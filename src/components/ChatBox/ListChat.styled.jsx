@@ -32,9 +32,10 @@ export const Top = styled.div`
           height: 24px;
           left: 9.74px;
           top: 8.77px;
-          font-family: 'Inter';
+          font-family: 'Open Sans';//, , ,
+    //, 'Cantarell', 'Fira Sans', 'Open Sans', 'Helvetica Neue';
           font-style: normal;
-          font-weight: 800;
+          font-weight: 1000;
           font-size: 25px;
           line-height: 24px;
           text-align: center;
@@ -175,21 +176,21 @@ export const ClerkName = styled.div`
   position: absolute;
   left: 60px;
   top: 5.5px;
-  font-family: 'Inter';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 1000;
   font-size: 14px;
   line-height: 14px;
   text-align: center;
-  color: #000000;
+  color: #303030;
   .msg{
     position: absolute;
     top: 150%;
     left: 0%;
-    font-family: 'Inter';
+    font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 200;
-    font-size: 15px;
+    font-weight: 300;
+    font-size: 14px;
     line-height: 12px;
     text-align: center;
     color: #5B5959;
@@ -198,7 +199,7 @@ export const ClerkName = styled.div`
     position: absolute;
     top: 150%;
     left: 100%;
-    font-family: 'Inter';
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
@@ -210,10 +211,10 @@ export const ClerkName = styled.div`
     position: absolute;
     top: 150%;
     left: 120%;
-    font-family: 'Inter';
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 200;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 12px;
     text-align: center;
     color: #5B5959;

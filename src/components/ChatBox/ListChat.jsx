@@ -8,7 +8,7 @@ import {
   Avatar, 
   ClerkName,
   SearchContainer} from './ListChat.styled'
-import { Link} from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import {GoDash} from 'react-icons/go'
 import {BiExpand, BiDotsHorizontal} from 'react-icons/bi'
@@ -20,7 +20,9 @@ const ListChat = props => {
           <div className='top-chat'> Chat </div>
           <div className='right-section'>
             <BiDotsHorizontal className='icon2'/>
-            <BiExpand className='icon1'/>
+            <NavLink to='/chat-room'>
+              <BiExpand className='icon1'/>
+            </NavLink>
             <GoDash className='closeButton' onClick={props.onClose} /> 
           </div>
         </Top>
