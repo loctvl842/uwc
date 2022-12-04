@@ -4,6 +4,9 @@ export const Container = styled.div`
   width: 100%;
   padding: 0.5rem;
   flex: 1 1 0%;
+  min-height: 300px;
+  max-height: 450px;
+  overflow: scroll;
 `;
 
 export const InputField = styled.div`
@@ -100,8 +103,9 @@ export const ListStyleType = styled.div`
 `;
 
 export const ActionButton = styled.div`
-  width: 100%;
+  width: 40px;
   height: 100%;
+  flex-shrink: 0;
   min-height: 24px;
   border-radius: 5px;
   background: #efefef;
@@ -125,14 +129,11 @@ export const ListContainer = styled.div`
 `;
 
 export const UnorderList = styled.ul`
-  width: calc(100% - 100px);
+  width: 100%;
   transition: all 0.2s;
   transform: scaleY(1);
   height: auto;
   overflow: visible;
-  /* height: 0; */
-  /* overflow: hidden; */
-  /* transform: scaleY(0); */
   will-change: height;
 `;
 
@@ -155,4 +156,47 @@ export const ButtonContainer = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 24px;
+`;
+
+export const InputTextBtnContainer = styled.div`
+  position: relative;
+  width: 100%;
+  margin-right: 5px;
+  /* border-radius: 5px; */
+`;
+
+export const InputTextBtn = styled.input`
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 2px;
+  font-size: 0.9rem;
+  &:focus {
+    border-color: rgba(0, 0, 0, 0);
+  }
+`;
+
+export const InputTextActiveBorder = styled.div`
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 2px solid
+    ${({ isMCPFocus }) => (isMCPFocus ? "#006940" : "rgba(0,0,0,0)")};
+  transform: scaleX(${({ isMCPFocus }) => (isMCPFocus ? 1 : 0)});
+  border-radius: 5px;
+  transition: transform 0.2s;
+`;
+
+export const MCPname = styled.span`
+  width: 100%;
+  margin-right: 5px;
+`;
+
+export const CheckBoxContainer = styled.div`
+  flex-shrink: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

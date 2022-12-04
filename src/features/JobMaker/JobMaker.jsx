@@ -31,6 +31,10 @@ const JobMaker = () => {
   };
 
   useClickOutside(cardRef, (e) => {
+    if (e.target.tagName == "path" || e.target.tagName == "svg") {
+      return;
+    }
+    console.log(e.target.tagName);
     if (isJobMakerMount) {
       dispatch(isMakingTurnOff());
     }
@@ -42,7 +46,11 @@ const JobMaker = () => {
 
   return (
     <div>
-      <Container>
+      <Container
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <MoveLeft posX={jobMakerPos.x}>
           <MoveDown posY={jobMakerPos.y}></MoveDown>
           <FormContainer
@@ -51,7 +59,7 @@ const JobMaker = () => {
             isJobMakerMount={isJobMakerMount}
           >
             <Header>
-              <CloseBtn onClick={handleCloseBtnClick}>
+              <CloseBtn type="button" onClick={handleCloseBtnClick}>
                 <GrClose />
               </CloseBtn>
             </Header>

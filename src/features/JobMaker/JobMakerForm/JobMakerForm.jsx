@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MdCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { BsTrash } from "react-icons/bs";
-import { GoChevronRight, GoChevronDown } from "react-icons/go";
+import { v4 as uuidv4 } from "uuid";
 import {
   Container,
   InputField,
@@ -22,12 +22,22 @@ import {
   ButtonContainer,
   ListContainer,
   UnorderList,
+  InputTextBtn,
+  InputTextBtnContainer,
+  InputTextActiveBorder,
+  MCPname,
+  CheckBoxContainer,
 } from "./JobMakerForm.styled";
 
 const JobMakerForm = () => {
   const [isFocus, setIsFocus] = useState(false);
-  const [isMCPsOpen, setIsMCPsOpen] = useState(false);
-  const mcpRef = useRef(null);
+  const [isMCPFocus, setIsMCPFocus] = useState(false);
+  const [mcps, setMCPs] = useState([]);
+  const [mcp, setMCP] = useState({
+    name: "",
+    checked: false,
+  });
+  const [name, setName] = useState("");
   const [vehicle, setVehicle] = useState({
     troller: 0,
     truck: 0,
@@ -38,11 +48,33 @@ const JobMakerForm = () => {
     setVehicle({ ...vehicle, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    if (mcpRef.current) {
-      setIsMCPsOpen(true);
+  const addMCP = () => {
+    const isMCPexist = mcps.find((m) => m.name === mcp.name);
+    if (!isMCPexist && mcp.name !== "") {
+      setMCPs((oldMCPs) => [...oldMCPs, mcp]);
     }
-  }, [mcpRef.current]);
+    setMCP({ name: "", checked: false });
+  };
+
+  const toggleChecked = (name) => {
+    const newMCPs = mcps.map((m) => {
+      if (m.name === name) {
+        m.checked = !m.checked;
+      }
+      return m;
+    });
+    setMCPs(newMCPs);
+  };
+
+  const checkAllMCP = () => {
+    const newMCPs = mcps.map((m) => ({ ...m, checked: true }));
+    setMCPs(newMCPs);
+  };
+
+  const removeMCP = () => {
+    const newMCPs = mcps.filter((m) => !m.checked);
+    setMCPs(newMCPs);
+  };
 
   return (
     <Container>
@@ -52,6 +84,8 @@ const JobMakerForm = () => {
           <InputText
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
+            onChange={(e) => setName(e.target.value)}
+            value={name}
           ></InputText>
           <InActiveBar></InActiveBar>
           <ActiveBar isFocus={isFocus}></ActiveBar>
@@ -108,63 +142,55 @@ const JobMakerForm = () => {
         <LabelType width={100}>MCPs: </LabelType>
         <ListContainer>
           <ButtonContainer>
-            <ActionButton>+</ActionButton>
-            <ActionButton>
+            <InputTextBtnContainer>
+              <InputTextBtn
+                onFocus={() => setIsMCPFocus(true)}
+                onBlur={() => setIsMCPFocus(false)}
+                value={mcp.name}
+                onChange={(e) => {
+                  setMCP({ name: e.target.value, checked: false });
+                }}
+                onKeyUp={(e) => {
+                  e.preventDefault();
+                  if (e.key == "Enter") {
+                    addMCP();
+                  }
+                }}
+              ></InputTextBtn>
+              <InputTextActiveBorder
+                isMCPFocus={isMCPFocus}
+              ></InputTextActiveBorder>
+            </InputTextBtnContainer>
+            <ActionButton onClick={addMCP}>+</ActionButton>
+            <ActionButton onClick={removeMCP}>
               <BsTrash />
             </ActionButton>
-            <ActionButton>
+            <ActionButton onClick={checkAllMCP}>
               <MdCheckBox />
             </ActionButton>
-            <ActionButton>
-              <GoChevronDown />
-            </ActionButton>
           </ButtonContainer>
-          <UnorderList ref={mcpRef} isMCPsOpen={isMCPsOpen}>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-          </UnorderList>
-        </ListContainer>
-      </ListField>
+          <UnorderList>
+            {mcps.map((mcp) => (
+              <ListItem key={uuidv4()}>
+                <ListStyleType></ListStyleType>
+                <MCPname>{mcp.name}</MCPname>
 
-      <ListField>
-        <LabelType width={100}>Members: </LabelType>
-        <ListContainer>
-          <ButtonContainer>
-            <ActionButton>+</ActionButton>
-            <ActionButton>
-              <BsTrash />
-            </ActionButton>
-            <ActionButton>
-              <MdCheckBox />
-            </ActionButton>
-            <ActionButton>
-              <GoChevronDown />
-            </ActionButton>
-          </ButtonContainer>
-          <ul>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-            <ListItem>
-              <ListStyleType></ListStyleType> loc
-            </ListItem>
-          </ul>
+                <CheckBoxContainer>
+                  <div
+                    onClick={() => {
+                      toggleChecked(mcp.name);
+                    }}
+                  >
+                    {mcp.checked ? (
+                      <MdCheckBox />
+                    ) : (
+                      <MdOutlineCheckBoxOutlineBlank />
+                    )}
+                  </div>
+                </CheckBoxContainer>
+              </ListItem>
+            ))}
+          </UnorderList>
         </ListContainer>
       </ListField>
     </Container>
