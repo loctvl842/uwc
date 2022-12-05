@@ -40,6 +40,14 @@ const JobMaker = () => {
     }
   });
 
+  const handleJobMakerSubmit = (e) => {
+    e.preventDefault()
+    const myFormData = new FormData(e.currentTarget);
+    const dataArray = [...myFormData];
+    const data = Object.fromEntries(dataArray)
+    console.log(data)
+  }
+
   useEffect(() => {
     setIsJobMakerMount(isJobMaking);
   }, [isJobMaking]);
@@ -47,9 +55,7 @@ const JobMaker = () => {
   return (
     <div>
       <Container
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
+        onSubmit={handleJobMakerSubmit}
       >
         <MoveLeft posX={jobMakerPos.x}>
           <MoveDown posY={jobMakerPos.y}></MoveDown>

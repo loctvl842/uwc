@@ -7,6 +7,7 @@ export const Container = styled.div`
   min-height: 300px;
   max-height: 450px;
   overflow: scroll;
+  user-select: none;
 `;
 
 export const InputField = styled.div`
@@ -182,8 +183,9 @@ export const InputTextActiveBorder = styled.div`
   inset: 0;
   pointer-events: none;
   border: 2px solid
-    ${({ isMCPFocus }) => (isMCPFocus ? "#006940" : "rgba(0,0,0,0)")};
-  transform: scaleX(${({ isMCPFocus }) => (isMCPFocus ? 1 : 0)});
+    ${({ isInputTextFocus }) =>
+      isInputTextFocus ? "#006940" : "rgba(0,0,0,0)"};
+  transform: scaleX(${({ isInputTextFocus }) => (isInputTextFocus ? 1 : 0)});
   border-radius: 5px;
   transition: transform 0.2s;
 `;

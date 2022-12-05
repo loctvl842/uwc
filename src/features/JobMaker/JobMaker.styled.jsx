@@ -7,7 +7,7 @@ export const Container = styled.form`
   left: 0;
   bottom: 0;
   position: fixed;
-  pointer-events: none;
+  /* pointer-events: none; */
 `;
 
 export const MoveLeft = styled.div`
@@ -27,7 +27,7 @@ export const MoveDown = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  width: 450px;
+  /* width: 450px; */
   /* height: 536px; */
   background-color: #fff;
   box-shadow: 0px 24px 38px 3px rgb(0 0 0 / 14%),
@@ -110,4 +110,3 @@ export const CustomButton = styled.button`
     height: 100px;
   }
 `;
-
