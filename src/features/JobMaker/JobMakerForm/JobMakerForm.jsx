@@ -124,16 +124,9 @@ const ListFieldOpt = ({ optName, items, setItems }) => {
   );
 };
 
-const JobMakerForm = () => {
-  const [name, setName] = useState("");
-  const [vehicle, setVehicle] = useState({
-    troller: 0,
-    truck: 0,
-    van: 0,
-  });
-  const [mcps, setMCPs] = useState([]);
-  const [members, setMembers] = useState([]);
-  const [jobs, setJobs] = useState([]);
+const JobMakerForm = ({data, actions}) => {
+  const { name, vehicle, mcps, members, jobs } = data
+  const { setName, setVehicle, setMCPs, setMembers, setJobs } = actions
 
   const [isFocus, setIsFocus] = useState(false);
 
@@ -169,8 +162,8 @@ const JobMakerForm = () => {
                 min="0"
                 max="5"
                 name="troller"
-                // value={vehicle.troller}
-                // onChange={handleVehicleChange}
+                value={vehicle.troller}
+                onChange={handleVehicleChange}
               />
               <InactiveBorder></InactiveBorder>
             </InputNumberWrapper>

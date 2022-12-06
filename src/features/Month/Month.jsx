@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, GridLayout } from "./Month.styled";
-import Day from "./Day/Day";
+import Day from "@features/Day/Day";
 import MonthHeader from "./MonthHeader/MonthHeader";
 import { v4 as uuidv4 } from "uuid";
 

@@ -13,50 +13,94 @@ import {
 import useClickOutside from "@hook/useClickOutside";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+// features/actions
 import { isMakingTurnOff } from "@features/JobMaker/jobMakerSlice";
+import {
+  currentJobUpdated,
+  jobAdded,
+  jobUpdated,
+} from "@features/Job/jobSlice";
 import JobMakerForm from "./JobMakerForm/JobMakerForm";
 
 const JobMaker = () => {
+  const { currentJob } = useSelector((state) => state.job);
+  let initData = {
+    name: "",
+    jobs: [],
+    mcps: [],
+    members: [],
+    vehicle: {
+      troller: 0,
+      truck: 0,
+      van: 0,
+    },
+  };
+  if (currentJob != null) {
+    initData = currentJob.description;
+  }
+
   const dispatch = useDispatch();
   const [isJobMakerMount, setIsJobMakerMount] = useState(false);
   const {
     pos: jobMakerPos,
     isMaking: isJobMaking,
     isTranslateRight,
+    targetDate,
   } = useSelector((state) => state.jobMaker);
   const cardRef = useRef(null);
 
-  const handleCloseBtnClick = () => {
-    dispatch(isMakingTurnOff());
-  };
+  // data
+  const [name, setName] = useState(initData.name);
+  const [vehicle, setVehicle] = useState(initData.vehicle);
+  const [mcps, setMCPs] = useState(initData.mcps);
+  const [members, setMembers] = useState(initData.members);
+  const [jobs, setJobs] = useState(initData.jobs);
 
   useClickOutside(cardRef, (e) => {
     if (e.target.tagName == "path" || e.target.tagName == "svg") {
       return;
     }
-    console.log(e.target.tagName);
     if (isJobMakerMount) {
       dispatch(isMakingTurnOff());
+      dispatch(currentJobUpdated(null));
     }
   });
-
-  const handleJobMakerSubmit = (e) => {
-    e.preventDefault()
-    const myFormData = new FormData(e.currentTarget);
-    const dataArray = [...myFormData];
-    const data = Object.fromEntries(dataArray)
-    console.log(data)
-  }
 
   useEffect(() => {
     setIsJobMakerMount(isJobMaking);
   }, [isJobMaking]);
 
+  const handleCloseBtnClick = () => {
+    dispatch(isMakingTurnOff());
+    dispatch(currentJobUpdated(null));
+  };
+
+  const handleJobMakerSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      name,
+      vehicle,
+      mcps,
+      members,
+      jobs,
+    };
+    if (currentJob != null) {
+      dispatch(
+        jobUpdated({
+          date: targetDate,
+          description: data,
+          targetJobName: currentJob.description.name,
+        })
+      );
+    } else {
+      dispatch(jobAdded({ date: targetDate, description: data }));
+    }
+    dispatch(isMakingTurnOff());
+  };
+
   return (
     <div>
-      <Container
-        onSubmit={handleJobMakerSubmit}
-      >
+      <Container onSubmit={handleJobMakerSubmit}>
         <MoveLeft posX={jobMakerPos.x}>
           <MoveDown posY={jobMakerPos.y}></MoveDown>
           <FormContainer
@@ -69,7 +113,10 @@ const JobMaker = () => {
                 <GrClose />
               </CloseBtn>
             </Header>
-            <JobMakerForm></JobMakerForm>
+            <JobMakerForm
+              data={{ name, vehicle, mcps, members, jobs }}
+              actions={{ setName, setVehicle, setMCPs, setMembers, setJobs }}
+            ></JobMakerForm>
             <ButtonWrapper>
               <CustomButton type="submit">Save</CustomButton>
             </ButtonWrapper>
