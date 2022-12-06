@@ -19,11 +19,16 @@ const jobSlice = createSlice({
         (j) => j.description.name === job.description.name
       );
       if (!jobExist) {
-        state.jobs.push(job);
+        if (job.description.name !== "") {
+          state.jobs.push(job);
+        }
       }
     },
     jobUpdated(state, action) {
       const { date, description, targetJobName } = action.payload;
+      if (description.name === "") {
+        return
+      }
       const targetJob = state.jobs.find(
         (j) => j.date === date && j.description.name === targetJobName
       );

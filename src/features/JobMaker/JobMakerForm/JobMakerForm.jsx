@@ -78,9 +78,9 @@ const ListFieldOpt = ({ optName, items, setItems }) => {
               onChange={(e) => {
                 setItem({ name: e.target.value, checked: false });
               }}
-              onKeyUpCapture={(e) => {
-                e.preventDefault();
+              onKeyDown={(e) => {
                 if (e.key == "Enter") {
+                  e.preventDefault();
                   addItem();
                 }
               }}
@@ -124,9 +124,9 @@ const ListFieldOpt = ({ optName, items, setItems }) => {
   );
 };
 
-const JobMakerForm = ({data, actions}) => {
-  const { name, vehicle, mcps, members, jobs } = data
-  const { setName, setVehicle, setMCPs, setMembers, setJobs } = actions
+const JobMakerForm = ({ data, actions }) => {
+  const { name, vehicle, mcps, members, jobs } = data;
+  const { setName, setVehicle, setMCPs, setMembers, setJobs } = actions;
 
   const [isFocus, setIsFocus] = useState(false);
 
@@ -145,6 +145,12 @@ const JobMakerForm = ({data, actions}) => {
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
             onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key == "Enter") {
+                e.preventDefault()
+                return;
+              }
+            }}
             value={name}
           ></InputText>
           <InActiveBar></InActiveBar>
