@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #dadce0;
+  border-right: 1px solid #dadce0;
 `;
 
 export const MonthNav = styled.button`

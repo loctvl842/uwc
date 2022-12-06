@@ -119,6 +119,7 @@ const JobMaker = () => {
             ></JobMakerForm>
             <ButtonWrapper>
               <CustomButton type="submit">Save</CustomButton>
+              <CustomButton>Remove</CustomButton>
             </ButtonWrapper>
           </FormContainer>
         </MoveLeft>
