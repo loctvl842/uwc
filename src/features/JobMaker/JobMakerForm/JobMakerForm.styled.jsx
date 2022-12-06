@@ -4,7 +4,6 @@ export const Container = styled.div`
   width: 100%;
   padding: 0.5rem;
   flex: 1 1 0%;
-  min-height: 300px;
   max-height: 450px;
   overflow: scroll;
   user-select: none;
