@@ -23,7 +23,7 @@ const MemberDetail = () => {
             </div>
             <div className="member-body-right">
               <div className="content">
-                <p className="title">Co Founder</p>
+                <p className="title">Janitor</p>
                 <h3 className="name">Jessica Brown</h3>
                 <div className="social">
                   <a href="#">

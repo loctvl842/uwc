@@ -9,32 +9,32 @@ const Staffs = (props) => {
       <GeneralHeader type={props.type} />
       <Container>
         <Member
-          job="Account"
+          job="Janitor"
           name="Kevin Martin"
           url="/images/member/member-1.jpg"
         />
         <Member
-          job="Co Founder"
+          job="Janitor"
           name="Jessica Brown"
           url="/images/member/member-2.jpg"
         />
         <Member
-          job="Senior Assistant"
+          job="Janitor"
           name="David Cooper"
           url="/images/member/member-3.jpg"
         />
         <Member
-          job="Manager"
+          job="Collector"
           name="Sarah Albert"
           url="/images/member/member-4.jpg"
         />
         <Member
-          job="Director"
+          job="Collector"
           name="Mike Hardson"
           url="/images/member/member-5.jpg"
         />
         <Member
-          job="Voice President"
+          job="Collector"
           name="Christine Eve"
           url="/images/member/member-6.jpg"
         />
