@@ -17,7 +17,7 @@ const Body = () => {
               Your Clutter is
               <br /> Our Bread <span>&</span> Butter
             </h2>
-            <a href="/home/assign-tasks">Assign tasks</a>
+            <a href="/home/work-calendar">Assign tasks</a>
           </BodyMain>
         </BodyWrapper>
 
