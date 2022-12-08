@@ -27,7 +27,7 @@ const jobSlice = createSlice({
     jobUpdated(state, action) {
       const { date, description, targetJobName } = action.payload;
       if (description.name === "") {
-        return
+        return;
       }
       const targetJob = state.jobs.find(
         (j) => j.date === date && j.description.name === targetJobName
@@ -35,6 +35,12 @@ const jobSlice = createSlice({
       if (targetJob) {
         targetJob.description = description;
       }
+    },
+    jobRemoved(state, action) {
+      const { date, targetJobName } = action.payload;
+      state.jobs = state.jobs.filter(
+        (j) => !(j.date === date && j.description.name === targetJobName)
+      );
     },
     currentJobUpdated(state, action) {
       state.currentJob = action.payload;
@@ -44,7 +50,8 @@ const jobSlice = createSlice({
 
 export default jobSlice.reducer;
 
-export const { jobAdded, jobUpdated, currentJobUpdated } = jobSlice.actions;
+export const { jobAdded, jobUpdated, jobRemoved, currentJobUpdated } =
+  jobSlice.actions;
 
 export const selectJobsByDate = (state, date) => {
   return state.job.jobs.filter((j) => {

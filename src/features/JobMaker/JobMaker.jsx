@@ -19,6 +19,7 @@ import {
   currentJobUpdated,
   jobAdded,
   jobUpdated,
+  jobRemoved,
 } from "@features/Job/jobSlice";
 import JobMakerForm from "./JobMakerForm/JobMakerForm";
 
@@ -98,6 +99,15 @@ const JobMaker = () => {
     dispatch(isMakingTurnOff());
   };
 
+  const handleRemoveJob = () => {
+    dispatch(
+      jobRemoved({
+        date: targetDate,
+        targetJobName: currentJob.description.name,
+      })
+    );
+  };
+
   return (
     <div>
       <Container onSubmit={handleJobMakerSubmit}>
@@ -118,8 +128,8 @@ const JobMaker = () => {
               actions={{ setName, setVehicle, setMCPs, setMembers, setJobs }}
             ></JobMakerForm>
             <ButtonWrapper>
+              <CustomButton onClick={handleRemoveJob}>Remove</CustomButton>
               <CustomButton type="submit">Save</CustomButton>
-              <CustomButton>Remove</CustomButton>
             </ButtonWrapper>
           </FormContainer>
         </MoveLeft>

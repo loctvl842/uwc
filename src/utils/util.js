@@ -15,3 +15,12 @@ export const getMonth = (month = DEFAULT_MONTH) => {
   });
   return daysMatrix;
 };
+
+export const fetchData = async (url) => {
+  try {
+    const data = await fetch(`${process.env.REACT_APP_ENDPOINT_SERVER}${url}`);
+    return data.json();
+  } catch (err) {
+    console.error(err);
+  }
+};

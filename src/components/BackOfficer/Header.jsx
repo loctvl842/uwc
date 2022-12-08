@@ -94,19 +94,19 @@ const Header = () => {
                 </NavLink>
               </div>
             </li>
-            <li>
-              <div className="dropdown" id="assign-tasks">
-                <span className="text">Manage Tasks</span>
-              </div>
-              <ul className="list small-drop">
-                <li>
-                  <NavLink to="/home/assign-tasks">Collectors</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/home/assign-tasks">Janitors</NavLink>
-                </li>
-              </ul>
-            </li>
+            {/* <li> */}
+            {/*   <div className="dropdown" id="assign-tasks"> */}
+            {/*     <span className="text">Manage Tasks</span> */}
+            {/*   </div> */}
+            {/*   <ul className="list small-drop"> */}
+            {/*     <li> */}
+            {/*       <NavLink to="/home/assign-tasks">Collectors</NavLink> */}
+            {/*     </li> */}
+            {/*     <li> */}
+            {/*       <NavLink to="/home/assign-tasks">Janitors</NavLink> */}
+            {/*     </li> */}
+            {/*   </ul> */}
+            {/* </li> */}
             <li>
               <div className="dropdown" id="work-calendar">
                 <NavLink
