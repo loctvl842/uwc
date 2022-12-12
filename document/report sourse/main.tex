@@ -186,7 +186,7 @@ KHOA KHOA HỌC \& KỸ THUẬT MÁY TÍNH
 \begin{tabular}{rrl}
 
 \hspace{5 cm} &\textcolor{blue}{ GVHD}: & \textcolor{blue}{Lê Đình Thuận}\\
-
+\hspace{5 cm} &\textcolor{blue}{ Nhóm}: & \textcolor{blue}{CNPM}\\
 & \textcolor{blue}{SV thực hiện}: & \textcolor{blue}{Nguyễn Hữu Hùng \hspace{6.5mm}2013364 - L04} \\
 & &\textcolor{blue}{Ngô Vũ Anh Khoa  \hspace{6.5mm}2011423 - L04} \\
 & & \textcolor{blue}{Bùi Tiến Lộc \hspace{15mm}2013678 - L04}  \\
@@ -213,7 +213,7 @@ KHOA KHOA HỌC \& KỸ THUẬT MÁY TÍNH
 \setlength{\parindent}{0cm}
 \textbf{Xác định bối cảnh của dự án}\\ 
 Dựa trên tình hình thực tế thu gom rác thải tại thành phố Hồ Chí Minh, khảo sát hình thức thu gom rác thải bằng phương tiện chạy theo lịch trình thu trước tại từng điểm thu và hình thức thu theo từng hộ gia đình. Theo kết quả khảo sát thì đa số người dân chọn hình thức  thu gom
-rác thải bằng phương tiện chạy theo lịch trình thu trước tại từng điểm thu. Lý do được giải thích bởi vì tại một địa điểm thu gom nhất định đem lại nhiều lợi ích so với hình thức thu gom rác theo từng hộ gia đình. Thứ nhất, giảm thiểu được chi phí nhân công so với thu gom rác thải thủ công tại từng hộ gia đình. Thứ hai, giảm thiểu được thời gian thu gom và chi phí nhiên liệu khi di chuyển theo lịch trình đã được tính toán trước. Thứ ba, giúp cho người dân thuận tiện hơn trong việc đưa rác thải ra địa điểm thu gom.  Nhà cung cấp dịch vụ hiện đang cung cấp dịch vụ dọn rác theo hình thức trên với một hệ thống quản lý thông tin UWC 1.0. Tuy nhiên hệ thống UWC 1.0 hiện tại có hiệu suất thu gom chưa cao. Vì vậy nhà cung cấp dịch vụ Y ký hợp đồng với tổ chức X để phát triển một hệ thống quản lý thông tin gọi là UWC 2.0 với mục đích để cải thiện hiệu năng thu gom rác thải. \\
+rác thải bằng phương tiện chạy theo lịch trình thu trước tại từng điểm thu. Lý do được giải thích bởi vì tại một địa điểm thu gom nhất định đem lại nhiều lợi ích so với hình thức thu gom rác theo từng hộ gia đình. Thứ nhất, giảm thiểu được chi phí nhân công so với thu gom rác thải thủ công tại từng hộ gia đình. Thứ hai, giảm thiểu được thời gian thu gom và chi phí nhiên liệu khi di chuyển theo lịch trình đã được tính toán trước. Thứ ba, giúp cho người dân thuận tiện hơn trong việc đưa rác thải ra địa điểm thu gom.  Nhà cung cấp dịch vụ Y hiện đang cung cấp dịch vụ dọn rác theo hình thức trên với một hệ thống quản lý thông tin UWC 1.0. Tuy nhiên hệ thống UWC 1.0 hiện tại có hiệu suất thu gom chưa cao. Vì vậy nhà cung cấp dịch vụ Y ký hợp đồng với tổ chức X để phát triển một hệ thống quản lý thông tin gọi là UWC 2.0 với mục đích để cải thiện hiệu năng thu gom rác thải. \\
 \textbf{Xác định các bên liên quan} 
 \begin{itemize}
     \item Back officer 
@@ -223,7 +223,7 @@ rác thải bằng phương tiện chạy theo lịch trình thu trước tại 
 \textbf{Nhu cầu hiện tại của họ}\\ Phát triển một hệ thống quản lý thông tin gọi là UWC 2.0 với mục đích để cải thiện hiệu năng thu gom rác thải. 
 \begin{itemize}
     \item Back officer: Cần có cái nhìn tổng quan về lịch làm việc của collectors, janitors, phân công công việc một các dễ dàng. Có thể kiểm soát, điều phối các phương tiện, nhân công. 
-    \item Collectors, janitors: Cần biết tổng quan lịch làm việc mình và các phương tiện nếu cần sử dụng.  
+    \item Collectors, janitors: Cần biết tổng quan lịch làm việc mình và các phương tiện nếu cần sử dụng.  
 
 \end{itemize}
 \textbf{Các vấn đề họ gặp phải} 
@@ -1463,538 +1463,552 @@ phương tiện}, \textit{tuyến đường} cần làm việc và \textit{các 
     \end{itemize}
     
     
-    \item \textbf{Modules} \\
-\textbf{    1. Task Assignment } \\
-    Task Assignment có 8 module:
-    \begin{itemize}
-        \item Display task on work calendar
-        \item Display notifications
-        \item Assign task
-        \item Create notifications
+       \item \textbf{Modules} \\
+   WMC 2.0 system có 12 module
+       \begin{itemize}
+        \item Back officer view
+        \item Janitor/Collector view
+        \item Task assignment controller
+        \item Comunicate controller
+        \item Authenticate controller
         \item Task
-        \item MCPs info
+        \item Employee
+        \item Vehicle
+        \item MCP
         \item Route
-        \item Employee 
+        \item Work calendar
+        \item User
+
     \end{itemize}
-    Các module được thể hiện như sau:\\
-    \begin{figure}[!h]
+        Các module được thể hiện như sau:\\
+   \begin{figure}[!h]
     \begin{center}
-      \includegraphics[width=6in]{Image/task_ass_module.png}
+      \includegraphics[width=6in]{Image/module.png}
     \end{center}
-\end{figure} \\
-    Mô tả input, output, function của mỗi module\\
-\textbf{    \textit{Assign task} }
-    
-\begin{minipage}[b]{0.4\textwidth}
-Task assignment result interface có\\
-- Hàm Assign\_result\_info với đầu vào là thông tin công việc (task\_info) và đầu ra là nội dung gán công việc\\
-- Hàm Display\_result\_info với đầu vào nội dung gán công việc và đầu ra kiểu muốn hiển thị cho nội dung gán công việc
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_1.png}}
-
-\begin{minipage}[b]{0.4\textwidth}
-Assignment result interface có \\
-- Hàm Assign\_result trả về kết quả gán công việc có thành công hay không(True or False)
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_2.png}}
-\newpage
-\textbf{\textit{Create notifications} }\\
-\begin{minipage}[b]{0.4\textwidth}
-Task notification interface có\\
-- Hàm Notify\_content với đầu vào là kết quả gán công việc . Hàm trả về kiểu hiển thị thông báo tương ứng với kết quả đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_3.png}}
-\newline
-\newline
-\textbf{\textit{Employee }} \\
-\begin{minipage}[b]{0.4\textwidth}
-Emloyee shift list interface có \\
-- Hàm Get\_employ\_shift trả về danh sách ca làm việc của công nhân
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_5.png}}
-\newline
-\newline
-\textbf{\textit{Route}} \\
-\begin{minipage}[b]{0.4\textwidth}
-Route list interface có\\
-- Hàm Get\_route\_list trả về danh sách các tuyến đường
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_6.png}}
-\newline
-\newline
-\textbf{\textit{MCPs info}} \\
-
-\begin{minipage}[b]{0.4\textwidth}
-MCP's info list interface có \\
-- Hàm Get\_mcp\_list trả về danh sách các MCP
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_7.png}}
-\newline
-\newline
-\textbf{\textit{Task}} \\
-\begin{minipage}[b]{0.4\textwidth}
-Task info interface có \\
-- Hàm Task\_detail trả về thông tin công việc cần gán dựa trên các thuộc tính danh sách ca làm việc của nhân viên, danh sách tuyến đường, danh sách MCP 
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_4.png}}
-\begin{minipage}[b]{0.4\textwidth}
-New state interface có \\
-- Hàm Update\_employ\_shift với đầu vào là danh sách nhân viên sau khi gán công việc(New\_employ\_shift\_list), trả về danh sách nhân viên sau khi cập nhật \\
-- Hàm Update\_route với đầu vào là danh sách  tuyến đường sau khi gán công việc(New\_route\_list), trả về danh sách tuyến đường sau khi cập nhật \\
-- Hàm Update\_MCP với đầu vào là danh sách  MCP sau khi gán công việc(New\_MCP\_list), trả về danh sách MCP sau khi cập nhật
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task_mn_8.png}}\\
-\newline
-\newline
-\newline
-\textbf{    2. MCP management } \\
-    MCP management có 10 module:
-    \begin{itemize}
-        \item Display MCPs info
-        \item Display MCP's creation
-        \item Display MCP's adjustment
-        \item Display notifications
-        \item View MCPs
-        \item Create MCPs
-        \item Adjust MCPs
-        \item Create notifications
-        \item MCPs info
-        \item Area info
-    \end{itemize}
-    Các module được thể hiện như sau:\\
-    \begin{figure}[!h]
-    \begin{center}
-      \includegraphics[width=6in]{Image/MCP_mn_md.png}
-    \end{center}
-\end{figure} \\
-    Mô tả input, output, function của mỗi module\\
-\textbf{    \textit{Area info} } \\
-\begin{minipage}[b]{0.4\textwidth}
-MCP info interface có \\
-- Hàm Get\_MCP với đầu vào là ID của MCP. Hàm trả về MCP ứng với ID đầu vào
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_3.png}}
-\newpage
-\begin{minipage}[b]{0.4\textwidth}
-Empty MCPs list interface có \\
-- Hàm Get\_empty\_MCP\_list  trả về danh sách MCP trống  danh sách các MCP
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_1.png}}
-\newline
-\newline
-\textbf{    \textit{MCPs info} } \\
-\begin{minipage}[b]{0.4\textwidth}
-Empty MCP info interface có \\
-- Hàm Get\_empty\_MCP trả về MCP trống trong danh sách các MCP trống
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_2.png}}
-\newline
-\newline
-\textbf{    \textit{View MCPs} } \\
-\begin{minipage}[b]{0.4\textwidth}
-  MCP info view  có \\
-- Hàm Display\_MCP\_info trả về kiểu hiện hiển thị thông tin MCP
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_6.png}}
-\newline
-\newline
-\textbf{    \textit{Create MCPs} } \\
-\begin{minipage}[b]{0.4\textwidth}
- MCP result interface có \\
-- Hàm MCP\_create\_result với đầu vào là MCP rỗng. Hàm cập nhật trạng thái của MCP sang bận rộn và trả về MCP đó  \\
--  Hàm MCP\_modiy\_result với đầu vào là MCP. Hàm  điều chỉnh MCP và trả về MCP đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_4.png}}
-\\ \\
-\begin{minipage}[b]{0.4\textwidth}
-  Result interface có \\
-- Hàm Result với đầu vào là MCP sau khi thao tác. Hàm trả về kết quả thao tác MCP có thành công hay không(True or False)
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_5.png}}
-\\ \\
-\begin{minipage}[b]{0.4\textwidth}
-  MCP creation result có \\
-- Hàm Display\_MCP\_create trả về  kiểu hiện hiển thị nội dung MCP sau khi tạo
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_7.png}}
-\newline
-\newline
-\newpage
-\textbf{    \textit{Adjust MCPs} } \\
-\begin{minipage}[b]{0.4\textwidth}
- MCP result interface có \\
-- Hàm MCP\_create\_result với đầu vào là MCP rỗng. Hàm cập nhật trạng thái của MCP sang bận rộn và trả về MCP đó  \\
--  Hàm MCP\_modiy\_result với đầu vào là MCP. Hàm  điều chỉnh MCP và trả về MCP đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_4.png}}
-\\ \\
-\begin{minipage}[b]{0.4\textwidth}
-  Result interface có \\
-- Hàm Result với đầu vào là MCP sau khi thao tác. Hàm trả về kết quả thao tác MCP có thành công hay không(True or False)
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_5.png}}
-\\ \\
-\begin{minipage}[b]{0.4\textwidth}
-MCP adjustment result có \\
-- Hàm Display\_MCP\_adjust trả về  kiểu hiện hiển thị nội dung MCP sau khi điều chỉnh
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_8.png}}
-\newline
-\newline
-\textbf{    \textit{MCP notification } } \\
-\begin{minipage}[b]{0.4\textwidth}
-MCP adjustment result có\\
-- Hàm Display\_MCP\_adjust với đầu vào là kết quả tạo hoặc chỉnh sửa MCP . Hàm trả về kiểu hiển thị thông báo tương ứng với kết quả đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/MCP_mn_md_9.png}}
-\newline
-\newline
-\newline
-\newpage
-\textbf{    3. Communication } \\
-    Communication có 8 module:
-    \begin{itemize}
-        \item Display message
-        \item View message
-        \item Search person
-        \item Display search person interface
-        \item Send message
-        \item Message database
-        \item Display notification
-        \item Create notifications
-    \end{itemize}
-    Các module được thể hiện như sau:\\
-    \begin{figure}[!h]
-    \begin{center}
-      \includegraphics[width=6in]{Image/com_module.png}
-    \end{center}
-\end{figure} \\
-    Mô tả input, output, function của mỗi module\\
-\textbf{    \textit{Message database} }
-    
-\begin{minipage}[b]{0.4\textwidth}
-Message Database cung cấp Interface "\textbf{Database connector}" - cho phép truy cập vào database, có hàm connectDatabase(), giúp kết nối với dữ liệu của hệ thống, hàm trả về true nếu kết nối thành công, và false nếu ngược lại.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_dbconnector.jpg}}
-\newline
-\newline
-\textbf{\textit{Search person} }\\
-\begin{minipage}[b]{0.4\textwidth}
-- Search interface cung cấp hàm displaySearchInterce() cung cấp giao diện tìm kiếm
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_searchinterface.jpg}}
-\newline
-\begin{minipage}[b]{0.4\textwidth}
-- Personal message có hàm getConversation() nhận vào tên người dùng và trả về dữ liệu tin nhắn của người dùng 	ứng với username đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_pmessage.jpg}}
-\newline
-\textbf{\textit{View message }} \\
-\begin{minipage}[b]{0.4\textwidth}
-- Interface "Message Infor" có các thuộc tính userInfo chứa thông tin về người dùng của những tin nhắn này, messageInfo là nội dung tin nhắn, và hàm displayConversation() trả về cuộc hội thoại.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_messinfor.jpg}}
-\newline
-\newline
-\textbf{\textit{Display message}} \\
-\begin{minipage}[b]{0.4\textwidth}
-- Interface "Chat interface" có hàm addMessage() nhận vào một đoạn tin nhắn và trả về kết quả của về gửi tin nhắn, và hàm deleteMessage() nhận vào msgID và trả về kết quả của việc xóa một tin nhắn trong đoạn hội thoại.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_chatinterface.jpg}}
-\newline
-\newline
-\textbf{\textit{Create notification}} \\
-
-\begin{minipage}[b]{0.4\textwidth}
-- Interface "Message notification" chứa các thuộc tính như senderName: tên của người gửi, time: thời gian gửi, và có hàm displayNotify() nhận vào trạng thái gửi tin nhắn.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_messnoti.jpg}}
-\newline
-\newline
-\textbf{\textit{Send message}} \\
-\begin{minipage}[b]{0.4\textwidth}
-- Interface "Send message status" chứa trạng thái của tin nhắn (đã được gửi thành công hay chưa), và hàm getMsgStatus() trả về trạng thái của tin nhắn.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_sendmessstatus.jpg}}
-\begin{minipage}[b]{0.4\textwidth}
-- Interface "New database state" chứa thông tin về trạng thái của tin nhắn mới được gửi, và từ đó có thể update lại database
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/com_newdbstate.jpg}}\\
-
-\newpage
-\textbf{    4. Route management } \\
-    Route management có 9 modules:
-    \begin{itemize}
-        \item Display route info
-       \item Display route creation
-       \item Display notifications
-        \item View route
-        \item Create route
-        \item Optimize route
-        \item Create notifications
-        \item  Route info
-        \item Area info
-  \end{itemize}
-    Các module được thể hiện như sau:\\
-    \begin{figure}[!h]
-    \begin{center}
-      \includegraphics[width=6in]{Image/Route_Module.png}
-    \end{center}
-\end{figure} \\
-    Mô tả input, output, function của mỗi module\\
-\textbf{    \textit{Area info} } \\
-\begin{minipage}[b]{0.4\textwidth}
-Route info interface có \\
-- Hàm Get\_route\_info với đầu vào là ID của route và trả về thông tin của route ứng với ID đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_1.png}}
-\newpage
-\begin{minipage}[b]{0.4\textwidth}
-Route list interface có \\
-- Hàm Get\_route\_list trả về danh sách các tuyến đường
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_2.png}}
-\newline
-\newline
-\textbf{    \textit{Route info} } \\
-\begin{minipage}[b]{0.4\textwidth}
-Route info interface có \\
-- Hàm Get\_route\_info với đầu vào là ID của route đã được tối ưu và trả về thông tin của route ứng với ID đó
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_1.png}}
-\newline
-\newline
-\textbf{    \textit{View route} } \\
-\begin{minipage}[b]{0.4\textwidth}
-  Route info view  có \\
-- Hàm Display\_route\_info trả về kiểu hiện hiển thị thông tin route
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_3.png}}
-\newline
-\newline
-\textbf{    \textit{Create route} } \\
-\begin{minipage}[b]{0.4\textwidth}
-  Route result interface có \\
-- Hàm Result với đầu vào là Route sau khi được tạo. Hàm trả về kết quả tạo Route có thành công hay không(True or False)
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_4.png}}
-\\ \\
-\begin{minipage}[b]{0.4\textwidth}
-  Route creation result có \\
-- Hàm Display\_route\_creation trả về kiểu hiện hiển thị thông tin route sau khi tạo
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_5.png}}
-\newline
-\newline
-\textbf{    \textit{Optimize route} } \\
-\begin{minipage}[b]{0.4\textwidth}
- Route optimization result interface có \\
-- Hàm Get\_optimized\_route với đầu vào là các route chưa được tối ưu.Hàm trả về các route đã được tối ưu\\
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_Module_10.png}}
-\\ \\
-\newline
-\newline
-\newpage
-\textbf{    \textit{Route notifications } } \\
-\begin{minipage}[b]{0.4\textwidth}
-Route notifications có\\
-- Hàm Notify\_content  với đầu vào là kết quả tạo. Hàm trả về hiển thị thông báo dựa trên kết kết quả đã nhận được
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/Route_module_7.png}}
-\newline
-\newline
-\textbf{    5. Work calendar } \\
-    Route management có 8 modules:
-    \begin{itemize}
-     
-        \item Display work calendar
-        \item Display individual task info
-        \item Display individual notifications
-        \item Get task info
-        \item Change task status
-        \item Get notifications
-        \item Task
-        \item Notifications
+\end{figure}
+     \end{itemize}
+     \newpage
+     \begin{enumerate}
+         \item Back officer view \\
+ \textbf{Input}
+ \begin{itemize}
+     \item ManangerAction: Required interface này cung cấp các chức năng chỉ có ở Back officer bao gồm: tạo task, tối ưu tuyến đường, tạo tuyến đường, tạo MCP, điều chỉnh MCP và xem lịch làm việc của nhân viên
+     \item CommonAction: Required interface này cung cấp các chức năng có ở cả Back office, Janitor/Collector bao gồm: xem lịch làm việc cá nhân, xem thông tin về MCP, xem thông tin về task và thông tin về tuyến đường
+     \item UserComunicate: Required interface này cung cấp các chức năng liên quan đến gửi nhận tin nhắn bao gồm: gửi tin nhắn, xem tin nhắn và tìm kiếm
+     \item UserAuthenticate:  Required interface này cung cấp các chức năng liên quan đến tài khoản người dùng bao gồm: chỉnh sửa tài khoản, tạo tài khoản, login, logout
  \end{itemize}
-    Các module được thể hiện như sau:\\
-    \begin{figure}[!h]
-    \begin{center}
-      \includegraphics[width=6in]{Image/cal-m.png}
-    \end{center}
-\end{figure} \\
-    Mô tả input, output, function của mỗi module\\
-\textbf{    \textit{Get task info} } \\
-\begin{minipage}[b]{0.4\textwidth}
-Individual calendar interface có \\
-- Hàm Display\_calendar\_info trả về kiểu hiện hiển thị thông tin chung của các task
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/cal-m1.png}}
-\newpage
-\begin{minipage}[b]{0.4\textwidth}
-Individual tasks info interface có \\
-- Hàm Display\_task\_info với đầu vào ID của task. Hiện hiển thị thông báo của task có ID tương ứng
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/IndividualTaskInfoInterface.png}}
-\newline
-\newline
-\textbf{    \textit{Task} } \\
-\begin{minipage}[b]{0.4\textwidth}
-Task info interface có \\
-- Hàm Get\_task với đầu vào là ID của task. Hàm trả về task ứng với ID đầu vào
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/cal-m3.png}}
-\newline
-\newline
-\textbf{    \textit{Get notifications } } \\
-\begin{minipage}[b]{0.4\textwidth}
-Notifications có\\
-- Hàm displaytNotificationList có input là id của janitor/collector và output là danh sách các notification (có đánh dấu những notification nào là mới).
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/noti-inter.png}}
-\newline
-\newline
-\textbf{    \textit{Notifications } } \\
-\begin{minipage}[b]{0.4\textwidth}
-Notification info có\\
-- Hàm displayNewNotification trả về thông tin thông báo của việc thay đổi task.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/notifo-inter.png}}
-\newline
-\newline
-\textbf{    \textit{Change task status} } \\
-\begin{minipage}[b]{0.4\textwidth}
-New status interface có \\
-- Hàm Task\_new\_status với đầu vào là task với trạng thái Todo sau đó chuyển về trạng thái Ongoing và trả về.\\
-- Hàm Task\_change\_result với đầu vào là task và trả về sau khi thay đổi.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/cal-m7.png}}
-\newline
-\newline
+  \textbf{Output}
+   \begin{itemize}
+     \item MnagerView: Provided interface này thực hiện các chức năng hiển thị các giao diện liên quan đến Back officer bao gồm: giao diện gán công việc ,giao diện thông tin MCP, giao diện work calendar, giao diện login, giao diện logout, giao diện nhắn tin
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface MnagerView:
+     \begin{itemize}
+     \item displayTaskAssignmentView(): obj \\
+     Hiển thị giao diện gán công việc
+\item displayOverviewMCPView(): obj\\
+Hiển thị giao diện về thông tin liên quan đến MCP
+\item displayWorkCalendar(): obj \\
+Hiển thị giao diện lịch làm việc của toàn bộ nhân viên
+\item displayOwnWorkCalendar(ID: int): obj \\
+Hiển thị giao diên lịch làm việc của một nhân viên cụ thê
+\item displayLogInView(): obj\\
+Hiển thị giao diện login
+\item displayLogOutView(): obj\\
+Hiển thị giao dieenh logout
+\item displayChatView(): obj\\
+Hiển thị giao diện chat
+ \end{itemize}
+ 
+          \item Janitor/Collector view \\
+ \textbf{Input}
+ \begin{itemize}
+     \item StaffAction: Required interface này cung cấp các chức năng chỉ có ở Janitor và Collector bao gồm: check in và check out công việc
+     \item CommonAction: Required interface này cung cấp các chức năng có ở cả Back office, Janitor/Collector bao gồm: xem lịch làm việc cá nhân, xem thông tin về MCP, xem thông tin về task và thông tin về tuyến đường
+     \item UserComunicate: Required interface này cung cấp các chức năng liên quan đến gửi nhận tin nhắn bao gồm: gửi tin nhắn, xem tin nhắn và tìm kiếm
+     \item UserAuthenticate:  Required interface này cung cấp các chức năng liên quan đến tài khoản người dùng bao gồm: chỉnh sửa tài khoản, tạo tài khoản, login, logout
+ \end{itemize}
+  \textbf{Output}
+   \begin{itemize}
+     \item StaffView: Provided interface này thực hiện các chức năng hiển thị các giao diện liên quan đến Janitor và Collector bao gồm: giao diện  thông tin công việc, giao diện login, giao diện logout, giao diện nhắn tin, giao diện check in, giao diện check out
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface StaffView:
+     \begin{itemize}
+     \item  displayOwnWorkCalendar(): obj\\
+     Hiển thị giao diện lịch làm việc
+\item  displayLogInView(): obj \\
+Hiển thị giao diện log in
+\item  displayLogOutView(): obj \\
+Hiển thị giao diện log out
+\item  displayChatView(): obj \\
+Hiển thị giao diện chat
+\item  displayCheckInView(): obj \\
+Hiển thị giao diện check in
+\item  displayCheckOutView(): obj \\
+Hiển thị giao diện check out
+ \end{itemize}
+ 
+           \item Task assignment controller \\
+ \textbf{Input}
+ \begin{itemize}
+    \item ManageTask: Required interface cung cấp các chức năng quản lý dữ liệu task bao gồm: lấy thông tin task và cập nhật task
+    \item ManageEmployee: Required interface cung cấp các chức năng quản lý dữ liệu employee bao gồm: lấy thông tin employee và cập nhật employee
+    \item ManageVehicle: Required interface cung cấp các chức năng quản lý dữ liệu vehicle bao gồm: lấy thông tin vehicle và cập nhật vehicle
+    \item ManageMCP: Required interface cung cấp các chức năng quản lý dữ liệu  MCP bao gồm: lấy thông tin MCP và cập nhật MCP
+    \item ManageRoute: Required interface cung cấp các chức năng quản lý dữ liệu route bao gồm: lấy thông tin route và cập nhật route
+    \item ManageCalendar: Required interface cung cấp các chức năng quản lý dữ liệu calendar bao gồm: lấy thông tin calendar và cập nhật calendar
+ \end{itemize}
+  \textbf{Output}
+   \begin{itemize}
+     \item ManangerAction: Provided interface này thực hiện các các chức năng chỉ có ở Back officer bao
+gồm: tạo task, tối ưu tuyến đường, tạo tuyến đường, tạo MCP, điều chỉnh MCP và xem lịch
+làm việc của nhân viên
+    \item CommonAction: Provided interface này thực hiện các chức năng có ở cả Back office, Janitor/-
+Collector bao gồm: xem lịch làm việc cá nhân, xem thông tin về MCP, xem thông tin về task
+và thông tin về tuyến đường
+    \item StaffAction: Provided interface này thực hiện các chức năng chỉ có ở Janitor và Collector bao
+gồm: check in và check out công việc
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManangerAction:
+     \begin{itemize}
+ \item create\_Task(employee: obj, verhicle: obj, MCP: obj, route: obj): obj 
+ \\ Tạo task mới
+\item optimize\_Route(route: obj): obj
+\\ Tối ưu hóa tuyến đường
+\item createRoute(routeInfo: obj): obj
+\\ Tạo tuyến đường
+\item createMCP(MCP\_ID: int): obj
+\\ Tạo MCP
+\item adjustMCP(MCP\_ID: int): obj
+\\ Điều chỉnh MCP
+\item viewWorkCalendarALL(): obj
+\\ Xem lịch làm việc của tất cả nhân viên
+ \end{itemize}
+   Các hàm này nằm trong interface CommonAction:
+     \begin{itemize}
+ \item viewWorkCalendar(ID: int): obj
+ \\ Xem lịch làm việc của cá nhân
+\item  viewMCPs(): obj
+\\ Xem thông tin về MCP
+\item  viewTask(taskID:int)
+\\ Xem thông tin về task
+\item  viewRoute(routeID: int)
+\\ Xem thông về tuyến đường
+ \end{itemize}
+   Các hàm này nằm trong interface StaffAction:
+     \begin{itemize}
+\item checkIn(taskID: int)
+\\ Check in công việc
+\item checkOut(taskID: int)
+\\ Check out công việc
+ \end{itemize}
+ 
+ 
+         \item Comunicate controller \\
+ \textbf{Input}
+ \begin{itemize}
+     \item ManageUserMess: Required interface này cung cấp các chức năng liên quan đến dữ liệu tin nhắn người dùng bao gồm: lấy dữ liệu tin nhắn và cập nhật dữ liệu tin nhắn
+ \end{itemize}
+  \textbf{Output}
+   \begin{itemize}
+     \item UserComunicate: Provided interface này thực hiện các chức năng liên quan đến gửi nhận tin
+nhắn bao gồm: gửi tin nhắn, xem tin nhắn và tìm kiếm
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface UserComunicate:
+     \begin{itemize}
+\item serchPerson(userName: string): obj
+\\ Tìm kiếm bạn bè
+\item sendMessage(mesage: string): bool
+\\ Gửi tin nhắn
+\item viewMessage(): string
+\\ Xem tin nhắn
+ \end{itemize}
+ 
+ 
+  
+         \item Authenticate controller \\
+ \textbf{Input}
+ \begin{itemize}
+     \item ManageUserAcc: Required interface này cung cấp các chức năng liên quan đến dữ liệu tài khoản người dùng bao gồm: lấy tên đăng nhập, lấy mật khẩu, lấy lịch sử hoạt động, cập nhật tên đăng nhập, cập nhật mật khẩu
+ \end{itemize}
+  \textbf{Output}
+   \begin{itemize}
+     \item UserAuthenticate: Provided interface này thực hiện các chức năng liên quan đến tài khoản
+người dùng bao gồm: chỉnh sửa tài khoản, tạo tài khoản, login, logout
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface UserAuthenticate:
+     \begin{itemize}
+\item editAccount(userName: string, password: string): obj
+\\ Chỉnh sửa thông tin tài khoản
+\item createAccount(userName: string, password: string): obj
+\\ Tạo tài khoản
+\item logIn(userName: string, password: string): bool
+\\ Đăng nhập
+\item logOut(): bool
+\\ Đăng xuất
+ \end{itemize}
+ 
+ 
+          \item Task \\
+  \textbf{Output}
+   \begin{itemize}
+     \item ManageTask: Provided interface này thực hiện các  chức năng quản lý dữ liệu task bao gồm: lấy
+thông tin task và cập nhật task
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageTask:
+     \begin{itemize}
+\item getTask(taskID: int): obj \\
+Lấy thông tin task
+\item updateTask(taskID: int, data: obj): bool \\
+Cập nhật task
+ \end{itemize}
+ 
+           \item Employee \\
+  \textbf{Output}
+   \begin{itemize}
+     \item  ManageEmployee: Provided interface này thực hiện các chức năng quản lý dữ liệu employee bao
+gồm: lấy thông tin employee và cập nhật employee
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageEmployee:
+     \begin{itemize}
+\item getEmployee(ID: int): obj
+\\ Lấy thông tin employee
+\item updateEmployee(ID: int, data: obj): bool
+\\ Cập nhật thông tin employee
 
-\textbf{\textit{Get individual info} } \\
-\begin{minipage}[b]{0.4\textwidth}
-Task info có \\
-- Hàm Get task với input là ID của một task, output là task ứng với ID đó.
-\end{minipage}
-\hfill
-\raisebox{-1\baselineskip}{\includegraphics[width=0.5\textwidth]{Image/task-inter.png}}
-\newline
-\newline
-\end{itemize} 
-\newpage
+
+
+ \end{itemize}
+ 
+            \item Vehicle \\
+  \textbf{Output}
+   \begin{itemize}
+     \item ManageVehicle: Provided interface này thực hiện các chức năng quản lý dữ liệu vehicle bao gồm:
+lấy thông tin vehicle và cập nhật vehicle
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageVehicle:
+     \begin{itemize}
+\item getVehicle(vehicleID: int): obj
+\\ Lấy thông tin vehicle
+\item updateVehicle(vehicleID: int, data: obj): bool
+\\ Cập nhật vehicle
+
+
+
+ \end{itemize}
+ 
+             \item MCP \\
+  \textbf{Output}
+   \begin{itemize}
+     \item ManageMCP: Provided interface này thực hiện các chức năng quản lý dữ liệu MCP bao gồm: lấy
+thông tin MCP và cập nhật MCP
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageMCP:
+     \begin{itemize}
+\item getMCP(MCP\_ID: int): obj
+\\ Lấy thông tin về một MCP
+\item getAllMCP(): obj
+\\ Lấy thông tin về tất cả MCP
+\item updateMCP(MCP\_ID: int, data: obj): bool
+\\ Cập nhật MCP
+
+
+ \end{itemize}
+ 
+              \item Route \\
+  \textbf{Output}
+   \begin{itemize}
+     \item ManageRoute: Provided interface này thực hiện các chức năng quản lý dữ liệu route bao gồm: lấy
+thông tin route và cập nhật route
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageRoute:
+     \begin{itemize}
+\item getRoute(routeID: int): obj
+\\ Lấy thông tin route
+\item updateRoute(roueID: int,data: obj): bool
+\\ Cập nhật route
+
+ \end{itemize}
+ 
+               \item Work calendar \\
+  \textbf{Output}
+   \begin{itemize}
+     \item ManageCalendar: Provided interface này thực hiện các chức năng quản lý dữ liệu calendar bao gồm:
+lấy thông tin calendar và cập nhật calendar
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageCalendar:
+     \begin{itemize}
+\item getWorkCaledarALL(): obj
+\\ Lấy lịch làm việc của tất cả nhân viên
+\item getWorkCaledar(ID: int): obj
+\\ Lấy lịch làm việc của một nhân viên
+ \item updateWorkcalendar(ID: int, data obj): bool
+\\ Cập nhật lịch làm việc
+ \end{itemize}
+ 
+ 
+               \item User
+ \\
+  \textbf{Output}
+   \begin{itemize}
+     \item ManageUserAcc: Provided interface này thực hiện  các chức năng liên quan đến dữ liệu tài
+khoản người dùng bao gồm: lấy tên đăng nhập, lấy mật khẩu, lấy lịch sử hoạt động, cập nhật
+tên đăng nhập, cập nhật mật khẩu
+      \item ManageUserMes: Provided interface này thực hiện   các chức năng liên quan đến dữ liệu tin
+nhắn người dùng bao gồm: lấy dữ liệu tin nhắn và cập nhật dữ liệu tin nhắn
+ \end{itemize}
+  \textbf{Function of module}\\
+  Các hàm này nằm trong interface ManageUserAcc:
+     \begin{itemize}
+\item getUserName(ID: int): obj
+\\ Lấy tên đăng nhập
+\item getPassword(ID: int): obj
+\\ Lấy mật khẩu
+\item getHistoryActive(ID: int): obj
+\\ Lấy lịch sử hoạt động
+\item updateUserName(ID: int, data: obj): bool
+\\ Cập nhật
+tên đăng nhập
+\item updatePassword(ID: int, data: obj): bool
+\\ Cập nhật mật khẩu
+ \end{itemize}
+ 
+   Các hàm này nằm trong interface ManageUserMes:
+     \begin{itemize}
+\item getMessage(ID: int): obj
+\\ Lấy dữ liệu tin nhắn
+\item updateMessage(ID: int, data: obj): bool
+\\  Cập nhật dữ liệu tin nhắn
+ \end{itemize}
+ 
+ 
+     \end{enumerate}
+
 \subsection{Draw an implementation diagram for Task Assignment module}
-\begin{enumerate}
-    \item \textbf{Compoment Diagram - Task Assignment}
-        \begin{figure}[!h]
+\begin{figure}[!h]
     \begin{center}
-      \includegraphics[width=6in]{Image/task_mn_arch.png}
+      \includegraphics[width=6in]{Image/MVC-mk.png}
     \end{center}
-\end{figure} \\
-\textbf{\textit{Mô tả}}
+\end{figure}
+Link diagram: \url{https://drive.google.com/file/d/1B8revM4U7j3hbYMXO9WQbX70we39lqNn/view?usp=sharing}
+\\
+ \textbf{Mô tả}
+ \begin{itemize}
+     \item Giao diện của back officer được khối \textit{Back officer view} cung cấp. Ở giao diện này back officer có thể thực các chức năng liên quan đến quản lý và gán công việc, nhắn tin với các nhân viên, các chức năng liên quan đến tài khoản người dùng. Các chức năng này nằm trong provided interface MnagerView. Cụ thể:
+     \begin{itemize}
+         \item Khi back officer yêu cầu các chức năng liên quan đến quản lý và gán công việc thì khối \textit{Back officer view} sẽ gửi yêu cầu đến khối  \textit{Task assignment controller} thông qua 2 required interface ManangerAction và CommonAction. \textit{Task assignment controller} sẽ xử lý các yêu cầu liên quan đến task bao gồm: tạo task, tạo tuyến đường , tối ưu hóa tuyến đường, tạo MCP, điều chỉnh MCP, xem thông tin về work calendar, MCP, tuyến đường. Sau khi nhận được yêu cầu \textit{Task assignment controller} sẽ gọi các khối \textit{Task}, \textit{Employee}, \textit{Vehicle}, \textit{MCP}, \textit{Work calendar} để xử lý các vấn đề liên quan đến data của task, nhân viên, phương tiện, MCP, work calendar thông qua các required interface ManageTask, ManageEmployee, ManageVehicle, ManageMCP, ManageRoute, ManageCalendar tương ứng
+         \item Khi  back officer yêu cầu các chức năng liên quan đến nhắn tin thì khối \textit{Back officer view} sẽ gửi yêu cầu đến khối  \textit{Comunicate controller} thông qua required interface UserComunicate. \textit{Comunicate controller} sẽ xử lý các yêu cầu liên quan đến tin nhắn bao gồm:  gửi tin nhắn, xem tin nhắn và tìm kiếm. Sau khi nhận được yêu cầu \textit{Comunicate controller} sẽ gọi  khối  \textit{User}  thông qua required interface ManageUserMess để xử lý các vấn đề liên quan đến data tin nhắn người dùng như: : lấy dữ liệu tin nhắn và cập nhật dữ liệu tin nhắn
+         \item Khi  back officer yêu cầu các chức năng đăng nhập, đăng xuất, quản lý tài khoản thì khối \textit{Back officer view} sẽ gửi yêu cầu đến khối  \textit{Authenticate controller} thông qua required interface UserAuthenticate. \textit{Authenticate controller}sẽ xử lý các yêu cầu liên quan đến tài khoản như  chỉnh sửa tài khoản, tạo tài khoản, login, logout. Sau khi nhận được yêu cầu \textit{Authenticate controller } sẽ gọi  khối  \textit{User} thông qua required interface ManageUserAcc để xử lý các vấn đề liên quan đến data tài khoản người dùng như: : lấy tên đăng nhập, lấy mật khẩu, lấy lịch sử hoạt động, cập nhật tên đăng nhập, cập nhật mật khẩu
+         
+     \end{itemize}
+    \item Giao diện của janitor/collector được khối \textit{Janitor/Collector view} cung cấp. Ở giao diện này janitor/collector có thể thực các chức năng liên quan đến quản lý công việc, nhắn tin với các nhân viên, các chức năng liên quan đến tài khoản người dùng. Các chức năng này nằm trong provided interface StaffView. Cụ thể: 
+    \begin{itemize}
+         \item Khi janitor/collector yêu cầu các chức năng liên quan đến quản lý công việc thì khối \textit{Janitor/Collector view} sẽ gửi yêu cầu đến khối  \textit{Task assignment controller} thông qua 2 required interface StaffAction và CommonAction. \textit{Task assignment controller} sẽ xử lý các yêu cầu liên quan đến task bao gồm: check in công việc, check out công việc ,xem thông tin về work calendar, MCP, tuyến đường. Sau khi nhận được yêu cầu \textit{Task assignment controller} sẽ gọi các khối \textit{Task}, \textit{Employee}, \textit{Vehicle}, \textit{MCP}, \textit{Work calendar} để xử lý các vấn đề liên quan đến data của task, nhân viên, phương tiện, MCP, work calendar thông qua các required interface ManageTask, ManageEmployee, ManageVehicle, ManageMCP, ManageRoute, ManageCalendar tương ứng
+         \item Khi  janitor/collector yêu cầu các chức năng liên quan đến nhắn tin thì hệ thống sẽ thực hiện các bước giống với back officer đã trình  bày ở trên
+        \item Khi  janitor/collector yêu cầu các chức năng đăng nhập, đăng xuất, quản lý tài khoản thì hệ thống sẽ thực hiện các bước giống với back officer đã trình  bày ở trên
+    \end{itemize}
+ \end{itemize}
+
+\section{Task 4: Implementation – Sprint 1}
+\subsection{Setting up. The team creates an online repository (github, bitbucket, etc) for version control. folders this stage, no need for a database to store all menu items, customers, etc. Data can be hard coded in code files.}
+Link GitHub: \url{https://github.com/loctvl842/uwc}
+\subsection{Adding documents, materials and folders for Requirement, System modelling and Architectural design. Use the selected version control system to report the changes to these files}
+Trong thư mục document trên github bao gồm: 
 \begin{itemize}
-\item  Khi người dùng chọn chức năng gán công việc thì khối \textit{Assign task} trong controller sẽ lấy thông tin về công việc cần gán từ khối \textit{Task} trong model. Thông tin công việc của khối \textit{Task} được tổng hợp từ các khối \textit {MCPs info},  \textit{Route},  \textit{Employee} trong model. Sau khi người dùng hoàn thành việc gán công việc thì khối \textit{Assign task} sẽ hiển thị nội dung công việc qua khối \textit{Display task on work calendar} ở view và cập nhật thông tin công việc qua khối \textit{Task} ở model
-\item  Khối  \textit{Task} ở model sẽ cập nhật thông tin công việc về ca làm việc của người lao đông, MCP và các tuyến đường qua các khối tương ứng \textit{Employee },   \textit{MCPs info}, \textit{Route} ở model 
-\item  Sau đó khối \textit{Assign task} sẽ gửi kết quả gán công việc qua khối \textit{Create notifications} ở controller. Khối \textit{Create notifications} sẽ hiển thị thông báo tương ứng với kết quả gán công việc qua khối \textit{Display notifications} ở view
+    \item Thư mục report source bao gồm các diagram trong thư mục Image, file source latex của báo cáo.
+    \item Báo cáo hiện tại với định dạng pdf.
+    \item File txt ghi lại các thay đổi trong báo cáo.
 \end{itemize}
-\newpage
-    \item \textbf{Compoment Diagram - MCP management}
-        \begin{figure}[!h]
+\subsection{Implement MVP1 – design an interface of either a Desktop-view central dashboard for Task Management for back-officers OR a Mobile-view Task assignment for Janitors and Collectors. Decide yourself what to include in  the view. Design use a wireframe tool. }
+Trong phần hiện thực MVP1 , nhóm chúng em lựa chọn thiết kế giao diện:  bảng điều khiển trung tâm ở chế độ xem trên máy tính bàn để quản lý tác vụ của back-officer\\
+\textbf{a. Screen flow} \\
+Screen flow của MVP1 được trình bày trong link dưới đây : \\
+\url{https://www.figma.com/file/W8BqwMIemaWgSwk5eZKapH/Task-Management?node-id=0\%3A1}
+\\
+\textbf{b. Mock-up}
+\begin{enumerate}
+   \item Log in
+    \\
+                \begin{figure}[!h]
     \begin{center}
-      \includegraphics[width=6in]{Image/MCP_mn_arch.png}
+      \includegraphics[width=5in]{Image/Log_in.png}
     \end{center}
 \end{figure} 
 \\
-    \textbf{\textit{Mô tả}}
+    \textbf{Mô tả}\\
+        Trang Log in có chức năng giúp người quản lý đăng nhập vào hệ thống
     \begin{itemize}
-        \item Ta có model \textit{Area info} chứa thông tin về các MCP trong một khu vực. \textit{MCP's info} chứa thông tin về các MCP chưa được gán để xử lý, được cung cấp từ Area info. Khi người dùng muốn xem thông tin về MCP, khối controller \textit{View MCP's} sẽ lấy thông tin tất cả các MCP trong một khu vực từ khối \textit{Area Info}, sau đó cung cấp thông tin của MCP cần xem cho khối \textit{Display MCP's info} để hiển thị lên.
-        \item Khi người dùng muốn Thêm thông tin về một MCP, khối controller \textit{Create MCP} sẽ lấy thông tin về các địa điểm cần gán để xử lý. Từ đó, sau khi xử lý, \textit{Create MCP} cung cấp thông tin về kết quả thêm mới MCP cho khối \textit{Display MCP's creation} để hiển thị lên màn hình, đồng thời gửi kết quả (thành công hay thất bại) về cho khối controller \textit{Create notifications}. Tương tự với khối \textit{Adjust MCP}, khối này sẽ gửi kết quả thay đổi thông tin của MCP về cho khối \textit{Display MCP's adjust} để hiển thị lên cho người dùng và cũng gửi kết quả của việc thay đổi (thành công hay thất bại) về cho khối\textit{ Create notifications}, từ đó khối \textit{Display notification} sẽ hiển thị lên thông báo kết quả của việc tạo mới/điều chỉnh. Đồng thời, cả hai khối controller này sẽ gửi kết quả điều chỉnh/tạo mới MCP về cho \textit{Area info} để cập nhật lại.
+    \item Các phần được đánh số 1, 2 là các trường input để người dùng nhập tài khoản và mật khẩu tương ứng
+    \item Khi người quản lý click vào nút dược đánh số 3 thì vào trang Home 
     \end{itemize}
-    \newpage
-    \item \textbf{Component Diagram - Communication}
+     \newpage
+    \item Home
+    \\
     \begin{figure}[!h]
+        \centering
+        \includegraphics[width = 5in]{Image/home.png}
+    \end{figure}\\
+    \textbf{Mô tả}\\
+    Đây là trang sẽ hiển thị sau khi người dùng đăng nhập thành công vào hệ thống. Ở đây, người dùng có thể chọn các dịch vụ mà họ cần:
+    \begin{itemize}
+        \item Nhấn vào Send Messages hoặc biểu tượng chat ở góc phải màn hình để gửi tin nhắn cho người dùng khác/nhân viên.
+        \item Nhấn vào Work Calendar để tạo công việc hoặc xem thông tin chi tiết về các công việc đã được giao 
+        \item Nhấn vào Assign Routes để quản lý các đường đi đến các MCPs.
+        \item Nhấn vào Overview MCP để xem thông tin mô tả chi tiết về các MCPs hiện có.
+        \item Nhấn vào LOGOUT để đăng xuất ra khỏi hệ thống.
+    \end{itemize}
+    Ngoài ra, người dùng có thể, chọn vào \textit{Home >> View Information} để xem danh sách các nhân viên hiện tại của công ty.
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width = 5in]{Image/home-stafflist.png}
+    \end{figure}
+    \newpage
+    Ở đây, hệ thống sẽ hiển thị danh sách các nhân viên, cũng như chức vụ, các kênh để liên hệ với nhân viên đó. Từ đây, người dùng cũng có thể xem chi tiết thông tin về một nhân viên cụ thể.\\
+    \newpage
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width = 5in]{Image/home-infor-detail.png}
+    \end{figure}\\
+    \\ Ở đây người dùng có thể xem thông tin chi tiết về nhân viên đó, cũng như những thế mạnh của họ.
+    \newpage
+    \item Send Messages
+    \\
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=6in]{Image/Chat-MK.png}
+    \end{figure}
+    \textbf{Mô tả}\\
+    Đây là trang người dùng sẽ hiển thị sau khi người dùng nhấn vào SendMessages ở giao diện Home. Trang này cho phép người dùng nhắn tin với các Janitor và Collector.
+    \begin{itemize}
+        \item Người dùng có thể nhấn vào nút trở về để về lại giao hiện Home.
+        \item Người dùng có thể nhập tên của Collector hoặc Janitor để tìm kiếm.
+        \item Người dùng có thể chọn tên của Collector hoặc Janitor để xem tin nhắn.
+        \item Người dùng có thể xem nội dung tin nhắn giữa họ và đối phương được hiển thị trên màn hình.
+    \end{itemize}
+        \\
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=6in]{Image/popup.png}
+    \end{figure}\\
+    \newpage
+        \begin{figure}[!h]
+        \centering
+        \includegraphics[width=6in]{Image/popup1.png}
+    \end{figure}
+    \\
+
+    Ở giao diện Home, khi người dùng nhấn vào biểu tượng chat ở góc dưới bên phải, sẽ hiển thị giao diện chat nhỏ.
+    \begin{itemize}
+        \item Người dùng có thể nhập tên của Collector hoặc Janitor để tìm kiếm.
+        \item Người dùng có thể chọn tên của Collector hoặc Janitor để chuyển sang giao diện xem tin nhắn.
+        \item Người dùng có thể xem nội dung tin nhắn giữa họ và đối phương được hiển thị trên màn hình.
+        \item Người dùng có thể thao tác với nút "-" để tắt giao diện chat nhỏ hoặc nút "<" để trở về giao diện danh sách chat từ giao diện xem tin nhắn.
+    \end{itemize}
+        \\
+    \newpage
+
+    \item Work Calendar\\
+    \newpage
+        \begin{figure}[!h]
     \begin{center}
-        \includegraphics[width=6in]{Image/com_componentdiagram.jpeg}
+      \includegraphics[width=5in]{Image/calendar.png}
+    \end{center}
+    \end{figure}
+    \textbf{Mô tả}\\
+    Trang Work calendar có chức năng giúp back-officer tạo công việc, gán công việc. Và có góc nhìn tổng quan về thông tin các công việc của mình.
+    \begin{itemize}
+        \item Back-officer có thể nhìn thấy tháng hiện tại đang hiển thị trên màn hình và thông tin cơ bản về các công việc trong những ngày cụ thể.
+        \item Nếu Back-officer chọn vào một công việc đang hiển thị trên một ngày cụ thể thì màn hình sẽ hiển thị thông tin chi tiết của công việc bao gồm ngày tháng thực hiện, thời gian thực hiện, thông tin phương tiện và thông tin của các nhân viên thực hiện công việc. Back-officer cũng có thể xóa công việc đó bằng cách nhấn nút remove
+        \item Người dùng có thể chọn sang tháng trước hoặc tháng sau để xem thông tin tổng quan của công việc trong các tháng đó.
+                \\
+                \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/workCalendarInformation.png}
     \end{center}
     \end{figure}\\
-        \textbf{\textit{Mô tả}}
-    \begin{itemize}
-        \item Khi người dùng sử dụng tính năng \textbf{Communication}, người dùng sẽ cần Tìm người mà mình muốn Gửi tin nhắn ở giao diện Tìm người. Khi đó, khối controller \textit{Search person} sẽ load dữ liệu về tin nhắn từ Database thông qua interface Database connector mà model \textit{Message Database} cung cấp.
-        \item Khối controller \textit{View Message} sẽ sử dụng interface Personal message được cung cấp để load lên đoạn hội thoại mà người dùng có với người được tìm kiếm, sau đó khối \textit{Display Message} sẽ lấy Message Infor và hiển thị đoạn hội thoại lên màn hình.
-        \item Sau đó, khối \textit{Display Message} cũng cung cấp giao diện để nhập tin nhắn cho khối controller \textit{Send Message}. Từ đó, \textit{Send Message} có thể cập nhật tin nhắn mới vào Database và gửi kết quả của việc gửi tin nhắn về cho khối controller \textit{Create notification} xử lý. Từ đó khối \textit{Display notification} có thể hiển thị thông báo đến cả người nhận và người gửi.
+        \item Back-officer có thể tạo công việc và gán công việc cho nhân viên bằng việc click vào một ngày mình muốn trên calendar. Sau đó hệ thống sẽ hiển thị các thông tin cần cung cấp để tạo công việc như: tên công việc phương tiện, MCP, nhân viên đảm nhận, mô tả công việc. Sau khi nhấn nút save thì công việc sẽ hiển thị trên calendar. 
+        \\
+                \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/assign.png}
+    \end{center}
+    \end{figure}\\
     \end{itemize}
-        \item \textbf{Component Diagram - Route management}
-        \newpage
-        \begin{figure}
-            \centering
-            \includegraphics[width=6in]{Image/RouteManagementComponent.drawio.png}
-        \end{figure}
-        
-        \textbf{Mô tả}
-        \begin{itemize}
-            \item Tính năng Route Management giúp cho cả back-officer, janitor/collector quản lý lộ trình đường đi qua những điểm cần thu gom rác về một MCP nào đó. Hệ thống hiển thị giao diện Route management thông qua View \textit{ Route Info}, được Controller \textit{View Route} lấy thông tin từ Model \textit{Area Info} ở bên dưới Database (là khu vực cần quản lý thu gom rác về một MCP).
-            \item Ngoài ra, hệ thống còn cho phép back-officer có thể tạo ra tuyến đường mới qua giao diện ở \textit{Display route creation}. Controller \textit{Create route} sẽ thực hiện tác vụ tạo ra tuyến đường mới với thông tin được lấy từ Model \textit{Routes Info}. Hệ thống còn hỗ trợ tìm ra được tuyến đường tối ưu nhất (về mặt giao thông, quãng đường...) qua Controller \textit{Optimize route}. Thông tin về những tuyến đường khả thi được lấy từ một danh sách các tuyến đường từ \textit{Area info} (một khu vực có thể có nhiều tuyến đường khả thi) là chọn ra tuyến đường tối ưu nhất. Thông tin về tuyến đường đó sẽ được lưu lại bên dưới Model \textit{Routes Info}.
-            \item Khi có một tuyến đường mới được tạo ra từ Controler \textit{Create route}, hệ thống sẽ gửi thông điệp tới một Controller mới tên là \textit{Create notification}. Controller nào sẽ tạo ra một thông báo mới về tuyến đường đi cho người dùng và hiển thị ở \textit{Display notification} cho người dùng biết.
-        \end{itemize}
-     \item \textbf{Component Diagram - Work calendar}
-     \newpage
-     \begin{figure}[!h]
-         \begin{center}
-              \includegraphics[width=6in]{Image/WorkCalendarComponent.drawio.png}
-         \end{center}
-     \end{figure}
-     \textbf{Mô tả}
-     \begin{itemize}
-        \item Component Work Calendar mô tả work calendar dưới góc độ của janitor và collector. Janitor sẽ xem được thông tin về lịch trình làm việc của mình trên View \textit{Display work calendar}. Khi đó, Controller \textit{Get task info} sẽ lấy thông tin về task trong Model \textit{Task} ở Database để hệ thống hiển thị Work calendar.
-         \item Khi sử dụng tính năng Work Calendar, janitor và collector sẽ xem được thông tin chi tiết của một task cụ thể được hiển thị lên Work Calendar (ví dụ: giao rác tới một khu vực) qua View \textit{Display individual task info}. Thông tin đó được Controller \textit{Get task info} từ Model \textit{Task} ở bên dưới phần Database.Trong quá trình làm việc, janitor/collector có thể đánh dấu một công việc nào đó được hoàn thành thông qua thao tác Check in/ Check out một task. Thao tác này sẽ gửi thông điệp đến Controller \textit{ Change task status} sẽ thay đổi trực tiếp trạng thái của một task (đã hoàn thành/ đang thực hiện/ chưa hoàn thành) ở phần Model \textit{Task} bên dưới phần Database, đồng thời Controller \textit{ Change task status} cũng sẽ gửi dữ liệu thông báo đến khối \textit{Notification} ở Model . Và hiển thị các thay đổi thông qua khối \textit{Display individual task info} ở View
-         \item Khi có sự thay đổi về trạng thái của một task, hoặc task mới được tạo ra, thì Model \textit{Notification},  cung cấp dữ liệu cho Controller \textit{Get notification} và hiển thị thông báo đó qua phần \textit{Display individual information} để người dùng có thể thấy được.
- 
-     \end{itemize}
+    \newpage
+     \item Assign Route\\
+     \textbf{Mô tả}\\
+     Trang Assign Route có chức năng giúp back-officer tạo ra các tuyến đường tối ưu để gán cho  janitor/collector. Giao diện mặc định của trang này như hình dưới đây  
+                 \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/assign_route.jpg}
+    \end{center}
+\end{figure} 
+\\
+Back officer cũng có thể tìm kiếm địa chỉ MCP thông qua công cụ tìm kiếm mà giao diện cung cấp
+                 \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/find_.jpg}
+    \end{center}
+\end{figure} 
+\\
+
+Để tìm tuyến đường tối ưu, đầu tiên back-officer cần cung cấp vị trí điểm đầu bằng cách chọn hoặc tìm kiếm trên bản đồ
+                   \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/route_1.jpg}
+    \end{center}
+\end{figure} 
+\\
+\newpage
+ Tiếp theo back-officer cần cung cấp vị trí điểm cuối bằng cách chọn hoặc tìm kiếm trên bản đồ. Sau đó hệ thống sẽ hiển thị tuyến đường tối ưu 
+                      \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/route_2.jpg}
+    \end{center}
+\end{figure} 
+\\
+\newpage
+
+    \item Overview MCP
+        \begin{figure}[!h]
+    \begin{center}
+      \includegraphics[width=5in]{Image/Overview_MCP.png}
+    \end{center}
+\end{figure} 
+\\
+    \textbf{Mô tả}\\
+    Trang Overview MCP có chức năng giúp người quản lý có thể xem thông tin về tất cả các MCP cụ thể:
+    \begin{itemize}
+    \item Các phần được đánh số 1, 2, 3, 4, 5, 6 mô tả thông liên quan đến MCP bao gồm: ID, tên, địa chỉ, trạng thái của capacity và mô tả ngắn gọn về MCP 
+    \item Các nút được đánh số 7, 8, 9, 10 dùng để chuyển trang
+    \item Khi quản lý click vào nút được đánh số 11 thì sẽ quay lại trang Home
+    \end{itemize}
 \end{enumerate}
-\section{Task 4: Implementation – Sprint 1}
-\subsection{Setting up. The team creates an online repository (github, bitbucket, etc) for version control. folders this stage, no need for a database to store all menu items, customers, etc. Data can be hard coded in code files.}
-Link GitHub: \url{https://github.com/loctvl842/uwc?fbclid=IwAR0AXKtJe1XXMB4Tozi7YlE61c7uTGSrbihFYnGeZQhrJuY8OSzQSuFazA4}
-\subsection{Adding documents, materials and folders for Requirement, System modelling and Architectural design. Use the selected version control system to report the changes to these files}
-\subsection{Implement MVP1 – design an interface of either a Desktop-view central dashboard for Task Management for back-officers OR a Mobile-view Task assignment for Janitors and Collectors. Decide yourself what to include in  the view. Design use a wireframe tool. }
+\section{Task 5: Implementation – Sprint 2}
+\subsection{Implement MVP2 – realize the design in MVP1 with a programming language}
+\begin{itemize}
+    \item Công nghệ sử dụng
+    \begin{itemize}
+        \item Html
+        \item Css
+        \item Javascript
+        \item React
+        \item Tailwind
+    \end{itemize} 
+    \item Source code\\
+    Link GitHub: \url{https://github.com/loctvl842/uwc}
+\end{itemize}
+
+\subsection{Demonstrate the whole project from Task 1 to Task 5}
+Link video: \url{https://youtu.be/ItuRZ0qreCA}
 \end{document}
